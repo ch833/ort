@@ -23,7 +23,7 @@ jobs:
         distribution: temurin
         java-version: 17
     - name: Build all classes
-      uses: gradle/gradle-build-action@v2
+      uses: gradle/gradle-build-action@a8f75513eafdebd8141bd1cd4e30fcd194af8dfa # v2.12.0
       with:
         gradle-home-cache-cleanup: true
         arguments: --scan classes -x :plugins:reporters:web-app-template:yarnBuild
@@ -85,7 +85,7 @@ jobs:
         gradle-home-cache-cleanup: true
         arguments: --scan test jacocoTestReport -x :plugins:reporters:web-app-template:yarnBuild
     - name: Upload code coverage data
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@ab904c41d6ece82784817410c45d8b8c02684457 # v3
       with:
         flags: test
   funTest-non-docker:
